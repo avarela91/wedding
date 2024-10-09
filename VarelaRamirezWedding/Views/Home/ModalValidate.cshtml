@@ -1,0 +1,27 @@
+﻿@model ET.Invitacion
+@{
+    ViewBag.Title = "Validar Codigo";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    @*<script src="~/Content/javascripts/inputFileStyle/bootstrap-filestyle.min.js"></script>*@
+</head>
+<body>
+    @*@using (Html.BeginForm("ModalValidateCode", "Home", FormMethod.Post, new { id = "new-solicitud-form", enctype = "multipart/form-data", onsubmit = "return validateForm()" }))
+        {*@
+
+    <div class="form-group">
+        @* @Html.TextBoxFor(model => model.Codigo, new { @id="code", @class = "form-control", type = "text", @required = "required", @placeholder = "Codigo de Verificacion" })*@
+        <input class="form-control" type="text" required="required" , placeholder="Codigo de Verificacion" id="code" name="code">
+    </div>
+
+
+    @*}*@
+
+
+</body>
+</html>

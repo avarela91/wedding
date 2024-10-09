@@ -1,0 +1,173 @@
+﻿@model ET.CodigoDetalle
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+</head>
+<body>
+    @{ 
+        var codigo="" ;
+        if (ViewData["CodigoMaster"] != null)
+        {
+            codigo = ViewData["CodigoMaster"].ToString();
+        }
+    }
+    <div id="fh5co-started" class="fh5co-bg" style="background-image: url(../../Content/images/img_bg_4.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    @if (ViewData["CodigoMaster"] != null && ViewData["msjCupos1"] != null && ViewData["msjCupos2"] != null && ViewData["msjCupos3"] != null)
+                    {
+                        <h2>Registro</h2>
+                        <h2>Codigo de Invitación: @ViewData["CodigoMaster"].ToString()</h2>
+                        
+                    }
+                    else
+                    {
+                        <h2>Registro - Codigo: Vacio</h2>
+                    }
+
+                    <p>Completa el Formulario para notificar que asistiras</p>
+                    <p>Favor registrar una persona a la vez</p>
+                </div>
+                <div class="row animate-box">
+                    <div class="col-md-10 col-md-offset-3">
+                        @using (Html.BeginForm())
+                        {
+                            <form class="form-horizontal">
+                                <div class="col-md-10 col-sm-4">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre", @required = "required" } })
+                                            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-10 col-sm-4">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apellido", @required = "required" } })
+                                            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(model => model.RequiereHabitacion, htmlAttributes: new { @class = "control-label col-md-2 col-md-offset-2" })
+                                            @Html.Label("Requiere Habitacion", htmlAttributes: new { style = "color:#FFFFFF", @class = "col-md-4 col-md-offset-1" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" hidden>
+                                    @Html.LabelFor(model => model.CodigoMaster, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.CodigoMaster, new { htmlAttributes = new { @class = "form-control", Value = codigo } })
+                                        @Html.ValidationMessageFor(model => model.CodigoMaster, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-offset-2 col-sm-4">
+                                    <button type="submit" class="btn btn-default btn-block">Registrar</button>
+                                </div>
+                            </form>
+
+                        }
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    @if (ViewData["CodigoMaster"] != null && ViewData["msjCupos1"] != null && ViewData["msjCupos2"] != null && ViewData["msjCupos3"] != null)
+                    {
+                    <h2>Información de la Invitación</h2>
+                        <h2>@ViewData["msjCupos1"].ToString()</h2>
+                        <h2>@ViewData["msjCupos2"].ToString()</h2>
+                        <h2>@ViewData["msjCupos3"].ToString()</h2>
+                    }
+                    else
+                    {
+                        <h2>Registro - Codigo: Vacio</h2>
+                    }
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>CodigoDetalle</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CodigoMaster, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CodigoMaster, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CodigoMaster, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequiereHabitacion, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.RequiereHabitacion)
+                            @Html.ValidationMessageFor(model => model.RequiereHabitacion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Activo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Activo)
+                            @Html.ValidationMessageFor(model => model.Activo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }*@
+
+
+   
+</body>
+</html>

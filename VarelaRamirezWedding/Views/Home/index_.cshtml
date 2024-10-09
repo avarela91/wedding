@@ -1,0 +1,628 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+<head>
+
+    @if (TempData["Message"] != null) {
+    <script type="text/javascript">
+             window.onload = function () {
+                        Swal.fire({
+                          position: 'top-end',
+                          icon: 'success',
+                          title: '@TempData["Message"]',
+                          showConfirmButton: false,
+                          timer: 1500
+                        })
+                };
+    </script>
+        }
+    
+
+</head>
+<body>
+
+    <div class="fh5co-loader"></div>
+
+    <div id="page">
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="#">Boda<strong>.</strong></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li class="active"><a href="~/Home/index">Home</a></li>
+                            @*<li><a href='about'>Historia</a></li>
+                            <li class="has-dropdown">
+                                <a href="~/Home/services">Servicios</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Diseño Web</a></li>
+                                    <li><a href="#">eCommerce</a></li>
+                                    <li><a href="#">Branding</a></li>
+                                    <li><a href="#">API</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="~/Home/gallery">Galeria</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">HTML5</a></li>
+                                    <li><a href="#">CSS3</a></li>
+                                    <li><a href="#">Sass</a></li>
+                                    <li><a href="#">jQuery</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="~/Home/contact">Contacto</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(../../Content/images/gallery-5.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h1>Allan &amp; Mariela</h1>
+                                <h2>Se unen en matrimonio</h2>
+                                <div class="simply-countdown simply-countdown-one"></div>
+                                <button id="btnShowModal" type="button"
+                                        class="btn btn-default btn-sm">
+                                    Confirma tu asistencia
+                                </button>
+                                @* <p id="#btnShowModal"><a class="btn btn-default btn-sm">Confirma tu asistencia</a></p>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="fh5co-couple">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <h2>Hola!</h2>
+                        <h3>18 de Diciembre, 2021 La Esperanza, Intibucá</h3>
+                        <p>Te invitamos a celebrar nuestra boda</p>
+                    </div>
+                </div>
+                <div class="couple-wrap animate-box">
+                    <div class="couple-half">
+                        <div class="groom">
+                            <img src="~/Content/images/groom.jpg" alt="groom" class="img-responsive">
+                        </div>
+                        <div class="desc-groom">
+                            <h3>Allan Varela</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+                        </div>
+                    </div>
+                    <p class="heart text-center"><i class="icon-heart2"></i></p>
+                    <div class="couple-half">
+                        <div class="bride">
+                            <img src="~/Content/images/bride.jpg" alt="groom" class="img-responsive">
+                        </div>
+                        <div class="desc-bride">
+                            <h3>Mariela Ramirez</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-event" class="fh5co-bg" style="background-image: url(../../Content/images/img_bg_3.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <span>Eventos</span>
+                        <h2>Eventos de la Boda</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="display-t">
+                        <div class="display-tc">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="col-md-6 col-sm-6 text-center">
+                                    <div class="event-wrap animate-box">
+                                        <h3>Ceremonia</h3>
+                                        <div class="event-col">
+                                            <i class="icon-clock"></i>
+                                            <span>4:00 PM</span>
+                                            <span>6:00 PM</span>
+                                        </div>
+                                        <div class="event-col">
+                                            <i class="icon-calendar"></i>
+                                            <span>Sabado 18</span>
+                                            <span>Diciembre, 2021</span>
+                                        </div>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 text-center">
+                                    <div class="event-wrap animate-box">
+                                        <h3>Recepcion</h3>
+                                        <div class="event-col">
+                                            <i class="icon-clock"></i>
+                                            <span>7:00 PM</span>
+                                            <span>12:00 AM</span>
+                                        </div>
+                                        <div class="event-col">
+                                            <i class="icon-calendar"></i>
+                                            <span>Monday 28</span>
+                                            <span>November, 2016</span>
+                                        </div>
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-couple-story">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <span>We Love Each Other</span>
+                        <h2>Our Story</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-0">
+                        <ul class="timeline animate-box">
+                            <li class="animate-box">
+                                <div class="timeline-badge" style="background-image:url(../../Content/images/couple-1.jpg);"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Conociendonos</h3>
+                                        <span class="date">2019</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted animate-box">
+                                <div class="timeline-badge" style="background-image: url(../../Content/images/couple-2.jpg);"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Primera Cita</h3>
+                                        <span class="date">2019</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animate-box">
+                                <div class="timeline-badge" style="background-image: url(../../Content/images/couple-3.jpg);"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">En una Relacion</h3>
+                                        <span class="date">January 1, 2016</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted animate-box">
+                                <div class="timeline-badge" style="background-image: url(../../Content/images/couple-4.jpg);"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Propuesta</h3>
+                                        <span class="date">Abril 10, 2021</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="animate-box">
+                                <div class="timeline-badge" style="background-image: url(../../Content/images/couple-5.jpg);"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3 class="timeline-title">Boda Civil</h3>
+                                        <span class="date">Agosto 27, 2021</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-gallery" class="fh5co-section-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <span>Our Memories</span>
+                        <h2>Galeria de Boda Civil</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-12">
+                        <ul id="fh5co-gallery-list">
+
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil1.jpeg); "></li>
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil2.jpeg); "> </li>
+
+
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil3.jpeg); "></li>
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil4.jpeg); "></li>
+
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil5.jpeg); "></li>
+
+
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil6.jpeg); "></li>
+
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil7.jpeg); "></li>
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil8.jpeg); "></li>
+                            <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(../../Content/images/civil9.jpeg); "></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image: url(../../Content/images/img_bg_5.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="display-t">
+                        <div class="display-tc">
+                            <div class="col-md-3 col-sm-6 animate-box">
+                                <div class="feature-center">
+                                    <span class="icon">
+                                        <i class="icon-users"></i>
+                                    </span>
+
+                                    <span class="counter js-counter" data-from="0" data-to="500" data-speed="5000" data-refresh-interval="50">1</span>
+                                    <span class="counter-label">Estimated Guest</span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 animate-box">
+                                <div class="feature-center">
+                                    <span class="icon">
+                                        <i class="icon-user"></i>
+                                    </span>
+
+                                    <span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
+                                    <span class="counter-label">We Catter</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 animate-box">
+                                <div class="feature-center">
+                                    <span class="icon">
+                                        <i class="icon-calendar"></i>
+                                    </span>
+                                    <span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
+                                    <span class="counter-label">Events Done</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 animate-box">
+                                <div class="feature-center">
+                                    <span class="icon">
+                                        <i class="icon-clock"></i>
+                                    </span>
+
+                                    <span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
+                                    <span class="counter-label">Hours Spent</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+        @*<div id="fh5co-testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="row animate-box">
+                        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                            <span>Best Wishes</span>
+                            <h2>Friends Wishes</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 animate-box">
+                            <div class="wrap-testimony">
+                                <div class="owl-carousel-fullwidth">
+                                    <div class="item">
+                                        <div class="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../../Content/images/couple-1.jpg" alt="user">
+                                            </figure>
+                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../../Content/images/couple-2.jpg" alt="user">
+                                            </figure>
+                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testimony-slide active text-center">
+                                            <figure>
+                                                <img src="../../Content/images/couple-3.jpg" alt="user">
+                                            </figure>
+                                            <span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+                                            <blockquote>
+                                                <p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+        @*<div id="fh5co-services" class="fh5co-section-gray">
+            <div class="container">
+
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>We Offer Services</h2>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+                            <span class="icon">
+                                <i class="icon-calendar"></i>
+                            </span>
+                            <div class="feature-copy">
+                                <h3>We Organized Events</h3>
+                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+                            <span class="icon">
+                                <i class="icon-image"></i>
+                            </span>
+                            <div class="feature-copy">
+                                <h3>Photoshoot</h3>
+                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+                            <span class="icon">
+                                <i class="icon-video"></i>
+                            </span>
+                            <div class="feature-copy">
+                                <h3>Video Editing</h3>
+                                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 animate-box">
+                        <div class="fh5co-video fh5co-bg" style="background-image: url(../../Content/images/img_bg_3.jpg); ">
+                            <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>*@
+
+
+        <div id="fh5co-started" class="fh5co-bg" style="background-image: url(../../Content/images/img_bg_4.jpg);">
+            <div class="overlay"></div>
+            @*<div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>Are You Attending?</h2>
+                        <p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+                    </div>
+                </div>
+                <div class="row animate-box">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form class="form-inline">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <button type="submit" class="btn btn-default btn-block">I am Attending</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+
+
+
+
+
+    @* Modal de confirmacion*@
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 class="modal-title">Verifica tu Codigo de Invitacion</h3>
+                </div>
+                <div class="modal-body" id="myModalBodyDiv">
+                </div>
+                <div class="modal-footer">
+                    <button id="btnValidar" type="button" class="btn btn-primary button button4">Validar</button>
+                    <button type="button" id="btnHideModal" class="btn btn-default button button4">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="~/Content/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/Content/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="~/Content/js/jquery.countTo.js"></script>
+
+    <!-- Stellar -->
+    <script src="~/Content/js/jquery.stellar.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/js/magnific-popup-options.js"></script>
+
+    <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+    <script src="~/Content/js/simplyCountdown.js"></script>
+
+
+    @* @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    *@
+
+    <script>
+
+
+        $(document).ready(function () {
+            $("#btnShowModal").click(function () {
+                var url = "/Home/ModalValidateCode";
+
+                $("#myModalBodyDiv").load(url, function () {
+                    $("#myModal").modal("show");
+
+                })
+            });
+
+            $("#btnHideModal").click(function () {
+                $("#myModal").modal('hide');
+            });
+
+            $("#btnValidar").click(function () {
+                var code = document.getElementById('code').value
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/ModalValidateCode',
+                    data: { 'codigo': code },
+                    success: function (data) {
+                        if (data.respuesta == 'Codigo Valido') {
+                            $.ajax({
+                                url: "/Home/Create",
+                                data: { 'Codigo': code },
+                                type: 'GET',
+                                success: function (result) {
+                                    window.location.href = '/Home/Create?Codigo=' + code
+                                },
+                                error: function (result) {
+                                }
+                            });
+                           
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: data.respuesta
+                            })
+                        }
+                    },
+                    error: function (error) {
+                        alert("Ajax Error: " + error)
+                    }
+                })
+            });
+
+        });
+
+        var d = new Date('December 18, 2021 16:00:00')
+
+        // default example
+        simplyCountdown('.simply-countdown-one', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate()
+        });
+
+        //jQuery example
+        $('#simply-countdown-losange').simplyCountdown({
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
+        });
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
+
